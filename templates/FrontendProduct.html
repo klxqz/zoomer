@@ -1,9 +1,30 @@
+{if $settings.hide}
+<style>
+    .image #product-image{
+        display: none;
+    }
+    #product-gallery{
+        display: none;
+    }
+</style>
+{/if}
 <script src="{$wa_app_static_url}plugins/zoomer/js/jquery.jqzoom-core-pack.js" type="text/javascript"></script>
 <link rel="stylesheet" href="{$wa_app_static_url}plugins/zoomer/css/jquery.jqzoom.css" type="text/css">
 <script type="text/javascript">
 
     $(function() {
-        $('.jqzoom').jqzoom();
+        $('.jqzoom').jqzoom({
+            zoomType: '{$settings.zoomType}',
+            zoomWidth: '{$settings.zoomWidth}',
+            zoomHeight: '{$settings.zoomHeight}',
+            xOffset: '{$settings.xOffset}',
+            yOffset: '{$settings.yOffset}',
+            position: '{$settings.position}',
+            title: {$settings.title},
+            lens: {$settings.lens},
+            imageOpacity: '{$settings.imageOpacity}',
+            
+        });
     });
 </script>
 <div class="zoomer_block">

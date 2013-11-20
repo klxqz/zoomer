@@ -52,6 +52,18 @@
     
     <div class="field">
         <div class="name">
+            Скрыть стандартные изображения
+        </div>
+        <div class="value">
+            <select name="shop_zoomer[hide]">
+                <option {if $settings.hide == 1} selected="selected"{/if} value="1">Да</option>
+                <option {if $settings.hide == 0} selected="selected"{/if} value="0">Нет</option>
+            </select>
+        </div>
+    </div>
+    
+    <div class="field">
+        <div class="name">
             Размер большого изображения
         </div>
         <div class="value">
@@ -77,6 +89,102 @@
         </div>
     </div>
     
+    <div class="field">
+        <div class="name">
+            Тип увеличения
+        </div>
+        <div class="value">
+            <select name="shop_zoomer[zoomType]">
+                <option {if $settings.zoomType == 'standard'} selected="selected"{/if} value="standard">standard</option>
+                <option {if $settings.zoomType == 'reverse'} selected="selected"{/if} value="reverse">reverse</option>
+                <option {if $settings.zoomType == 'drag'} selected="selected"{/if} value="drag">drag</option>
+                <option {if $settings.zoomType == 'innerzoom'} selected="selected"{/if} value="innerzoom">innerzoom</option>
+            </select>
+        </div>
+    </div>
+    
+    <div class="field">
+        <div class="name">
+            Ширина области увеличения
+        </div>
+        <div class="value">
+            <input type="text" name="shop_zoomer[zoomWidth]" value="{$settings.zoomWidth}" />
+        </div>
+    </div>
+    
+    <div class="field">
+        <div class="name">
+            Высота области увеличения
+        </div>
+        <div class="value">
+            <input type="text" name="shop_zoomer[zoomHeight]" value="{$settings.zoomHeight}" />
+        </div>
+    </div>
+    
+    <div class="field">
+        <div class="name">
+            Отступ по X
+        </div>
+        <div class="value">
+            <input type="text" name="shop_zoomer[xOffset]" value="{$settings.xOffset}" />
+        </div>
+    </div>
+    
+    <div class="field">
+        <div class="name">
+            Отступ по Y
+        </div>
+        <div class="value">
+            <input type="text" name="shop_zoomer[yOffset]" value="{$settings.yOffset}" />
+        </div>
+    </div>
+    
+    <div class="field">
+        <div class="name">
+            Положение
+        </div>
+        <div class="value">
+            <select name="shop_zoomer[position]">
+                <option {if $settings.position == 'right'} selected="selected"{/if} value="right">Справа</option>
+                <option {if $settings.position == 'left'} selected="selected"{/if} value="left">Слева</option>
+                <option {if $settings.position == 'top'} selected="selected"{/if} value="top">Сверху</option>
+                <option {if $settings.position == 'bottom'} selected="selected"{/if} value="bottom">Снизу</option>
+            </select>
+        </div>
+    </div>
+    
+    <div class="field">
+        <div class="name">
+            Показывать заголовок
+        </div>
+        <div class="value">
+            <select name="shop_zoomer[title]">
+                <option {if $settings.title == 'true'} selected="selected"{/if} value="true">Да</option>
+                <option {if $settings.title == 'false'} selected="selected"{/if} value="false">Нет</option>
+            </select>
+        </div>
+    </div>
+    
+    <div class="field">
+        <div class="name">
+            Показывать линзу
+        </div>
+        <div class="value">
+            <select name="shop_zoomer[lens]">
+                <option {if $settings.lens == 'true'} selected="selected"{/if} value="true">Да</option>
+                <option {if $settings.lens == 'false'} selected="selected"{/if} value="false">Нет</option>
+            </select>
+        </div>
+    </div>
+    
+    <div class="field">
+        <div class="name">
+            Прозрачность изображения
+        </div>
+        <div class="value">
+            <input type="text" name="shop_zoomer[imageOpacity]" value="{$settings.imageOpacity}" />
+        </div>
+    </div>
 
 
     <div class="field">
