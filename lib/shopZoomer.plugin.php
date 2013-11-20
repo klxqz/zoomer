@@ -2,17 +2,42 @@
 
 class shopZoomerPlugin extends shopPlugin {
 
-    public function frontendProduct($product) {        
-        $tmp_path = 'plugins/zoomer/templates/FrontendProduct.html';
-        $view = wa()->getView();
-        $view->assign('settings', $this->getSettings());
-        $template_path = wa()->getDataPath($tmp_path, false, 'shop', true);
-        if (!file_exists($template_path)) {
-            $template_path = wa()->getAppPath($tmp_path, 'shop');
-        }
+    protected static $plugin;
 
-        $html = $view->fetch($template_path);
-        return array('block' => $html);
+    public function __construct($info) {
+        parent::__construct($info);
+        if (!self::$plugin) {
+            self::$plugin = &$this;
+        }
+    }
+
+    protected static function getThisPlugin() {
+        if (self::$plugin) {
+            return self::$plugin;
+        } else {
+            return wa()->getPlugin('zoomer');
+        }
+    }
+
+    public function frontendProduct($product) {
+        if ($this->getSettings('default_output')) {
+            $html = self::display();
+            return array('block' => $html);
+        }
+    }
+
+    public static function display() {
+        $plugin = self::getThisPlugin();
+        if ($plugin->getSettings('status')) {
+            $tmp_path = 'plugins/zoomer/templates/FrontendProduct.html';
+            $view = wa()->getView();
+            $view->assign('settings', $plugin->getSettings());
+            $template_path = wa()->getDataPath($tmp_path, false, 'shop', true);
+            if (!file_exists($template_path)) {
+                $template_path = wa()->getAppPath($tmp_path, 'shop');
+            }
+            return $html = $view->fetch($template_path);
+        }
     }
 
 }
