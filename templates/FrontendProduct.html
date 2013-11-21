@@ -12,20 +12,19 @@
 <link rel="stylesheet" href="{$wa_app_static_url}plugins/zoomer/css/jquery.jqzoom.css" type="text/css">
 <script type="text/javascript">
 
-    $(function() {
-        $('.jqzoom').jqzoom({
-            zoomType: '{$settings.zoomType}',
-            zoomWidth: '{$settings.zoomWidth}',
-            zoomHeight: '{$settings.zoomHeight}',
-            xOffset: '{$settings.xOffset}',
-            yOffset: '{$settings.yOffset}',
-            position: '{$settings.position}',
-            title: {$settings.title},
-            lens: {$settings.lens},
-            imageOpacity: '{$settings.imageOpacity}',
-            
-        });
-    });
+            $(function() {
+            $('.jqzoom').jqzoom({
+            zoomType: '{$settings.zoomType|escape}',
+                    zoomWidth: parseInt('{$settings.zoomWidth|escape}'),
+                    zoomHeight: parseInt('{$settings.zoomHeight|escape}'),
+                    xOffset: parseInt('{$settings.xOffset|escape}'),
+                    yOffset: parseInt('{$settings.yOffset|escape}'),
+                    position: "{$settings.position|escape}",
+                    title: {$settings.title|escape},
+                    lens: {$settings.lens|escape},
+                    imageOpacity: '{$settings.imageOpacity|escape}',
+            });
+            });
 </script>
 <div class="zoomer_block">
     <!-- main image -->
@@ -33,7 +32,7 @@
         <table>
             <tr>
                 <td>
-                    <a href="{$wa->shop->productImgUrl($product,$settings.large_size)}" class="jqzoom" style="" title="{$product.name|escape}" rel="gal1">
+                    <a  href="{$wa->shop->productImgUrl($product,$settings.large_size)}" class="jqzoom" style="" title="{$product.name|escape}" rel="gal1">
                         <img src="{$wa->shop->productImgUrl($product,$settings.small_size)}"  title="{$product.name|escape}" >
                     </a>         
                 </td>

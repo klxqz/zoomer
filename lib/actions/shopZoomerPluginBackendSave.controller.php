@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * @author Коробонв Николай wa-plugins.ru <support@wa-plugins.ru>
+ * @link http://wa-plugins.ru/
+ */
 class shopZoomerPluginBackendSaveController extends waJsonController {
 
     protected $tmp_path = 'plugins/zoomer/templates/FrontendProduct.html';

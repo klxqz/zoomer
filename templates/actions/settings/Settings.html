@@ -24,7 +24,7 @@
 
     <div class="field">
         <div class="name">
-            Статус
+            Статус плагина
         </div>
         <div class="value">
             <select name="shop_zoomer[status]">
@@ -59,6 +59,7 @@
                 <option {if $settings.hide == 1} selected="selected"{/if} value="1">Да</option>
                 <option {if $settings.hide == 0} selected="selected"{/if} value="0">Нет</option>
             </select>
+            <p class="hint">Если "Да", плагин попытается скрыть стандартные изображения, если изображения не удасться скрыть автоматически, тогда отредактируйте файл product.html</p>
         </div>
     </div>
     
@@ -67,7 +68,8 @@
             Размер большого изображения
         </div>
         <div class="value">
-            <input type="text" name="shop_zoomer[large_size]" value="{$settings.large_size}" />
+            <input type="text" name="shop_zoomer[large_size]" value="{$settings.large_size|escape}" />
+            
         </div>
     </div>
     
@@ -76,7 +78,7 @@
             Размер маленького изображения
         </div>
         <div class="value">
-            <input type="text" name="shop_zoomer[small_size]" value="{$settings.small_size}" />
+            <input type="text" name="shop_zoomer[small_size]" value="{$settings.small_size|escape}" />
         </div>
     </div>
     
@@ -85,7 +87,7 @@
             Размер миниатюр
         </div>
         <div class="value">
-            <input type="text" name="shop_zoomer[thumb_size]" value="{$settings.thumb_size}" />
+            <input type="text" name="shop_zoomer[thumb_size]" value="{$settings.thumb_size|escape}" />
         </div>
     </div>
     
@@ -108,7 +110,7 @@
             Ширина области увеличения
         </div>
         <div class="value">
-            <input type="text" name="shop_zoomer[zoomWidth]" value="{$settings.zoomWidth}" />
+            <input type="text" name="shop_zoomer[zoomWidth]" value="{$settings.zoomWidth|escape}" />
         </div>
     </div>
     
@@ -117,7 +119,7 @@
             Высота области увеличения
         </div>
         <div class="value">
-            <input type="text" name="shop_zoomer[zoomHeight]" value="{$settings.zoomHeight}" />
+            <input type="text" name="shop_zoomer[zoomHeight]" value="{$settings.zoomHeight|escape}" />
         </div>
     </div>
     
@@ -126,7 +128,7 @@
             Отступ по X
         </div>
         <div class="value">
-            <input type="text" name="shop_zoomer[xOffset]" value="{$settings.xOffset}" />
+            <input type="text" name="shop_zoomer[xOffset]" value="{$settings.xOffset|escape}" />
         </div>
     </div>
     
@@ -135,7 +137,7 @@
             Отступ по Y
         </div>
         <div class="value">
-            <input type="text" name="shop_zoomer[yOffset]" value="{$settings.yOffset}" />
+            <input type="text" name="shop_zoomer[yOffset]" value="{$settings.yOffset|escape}" />
         </div>
     </div>
     
@@ -182,7 +184,8 @@
             Прозрачность изображения
         </div>
         <div class="value">
-            <input type="text" name="shop_zoomer[imageOpacity]" value="{$settings.imageOpacity}" />
+            <input type="text" name="shop_zoomer[imageOpacity]" value="{$settings.imageOpacity|escape}" />
+            <p class="hint">Значение от 0 до 1. По умолчанию 0.4</p>
         </div>
     </div>
 
