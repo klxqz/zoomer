@@ -11,6 +11,7 @@ $app_settings_model->set($plugin_id, 'zoomType', 'standard');
 $app_settings_model->set($plugin_id, 'zoomWidth', '300');
 $app_settings_model->set($plugin_id, 'zoomHeight', '300');
 $app_settings_model->set($plugin_id, 'xOffset', '10');
+$app_settings_model->set($plugin_id, 'yOffset', '0');
 $app_settings_model->set($plugin_id, 'position', 'right');
 $app_settings_model->set($plugin_id, 'title', 'true');
 $app_settings_model->set($plugin_id, 'lens', 'true');
