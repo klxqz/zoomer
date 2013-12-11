@@ -49,6 +49,7 @@
 <div class="zoomer_block">
     <!-- main image -->
     <div class="main_image">
+        {if $product.images}
         <table>
             <tr>
                 <td>
@@ -58,7 +59,7 @@
                 </td>
             </tr>
         </table>
-
+        {/if}
     </div>
     <!-- gallery -->
     {if count($product.images) > 1}
