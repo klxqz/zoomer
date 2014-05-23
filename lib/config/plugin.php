@@ -8,7 +8,7 @@ return array(
     'name' => 'Лупа',
     'description' => 'Эффект лупы при увеличение изображения',
     'vendor' => '985310',
-    'version' => '2.0.0',
+    'version' => '2.0.1',
     'img' => 'img/zoomer.png',
     'shop_settings' => true,
     'frontend' => true,
